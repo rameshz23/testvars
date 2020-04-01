@@ -43,7 +43,7 @@ def call(body) {
         sh '''COLOR=${COLOR}
         echo $COLOR'''
          }
-        
+}        
  }
  }
 }
