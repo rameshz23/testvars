@@ -13,6 +13,7 @@ def call(Map pipelineParams) {
                     }
                 }
             }
+        }
 
             stage('build') {
                 steps {
@@ -22,3 +23,4 @@ def call(Map pipelineParams) {
                 }
             }
        }
+    
