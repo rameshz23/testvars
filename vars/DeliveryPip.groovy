@@ -22,31 +22,14 @@ def call(body) {
                             }
                       }
               }
-		stage('Delete'){
+	stage('Delete'){
          steps{
           script{
               echo "Status updater step "
                 }
               }
          }
-        }
-		stage('Create'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
-         }
-        }
-		stage('Deploy'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
-         }
-        }
-		stage('Status Updater'){
+        stage('Create'){
          steps{
           script{
               echo "Status updater step "
@@ -54,5 +37,21 @@ def call(body) {
               }
          }
         
-	}
-	}
+	stage('Deploy'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        
+	stage('Status Updater'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        
+ }
+}
