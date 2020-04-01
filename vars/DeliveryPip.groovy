@@ -3,50 +3,45 @@ def call(body) {
         options {
                 buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
                 }
-        parameters {
-
-                string(name: 'jobID', defaultValue: '' )
-                string(name: 'NEW_BUILDNUMBER', defaultValue: '' )
-                file name:'input', description:'contains list of projects to be build'
-                }
-		agent any
+  		agent any
 		stages{
               stage('Prepare environment'){
                   steps{
-          		script{
-              			echo "Status updater step "
-                	   }
-              	}
+          		COLOR = "green"
+        echo "color is $COLOR"
+
+        sh '''COLOR=${COLOR}
+        echo $COLOR'''
               }
 	stage('Delete'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
+         COLOR = "green"
+        echo "color is $COLOR"
+
+        sh '''COLOR=${COLOR}
+        echo $COLOR'''
          }
         stage('Create'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
-         }
+         COLOR = "green"
+        echo "color is $COLOR"
+
+        sh '''COLOR=${COLOR}
+        echo $COLOR'''
+	}
         
 	stage('Deploy'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
+         COLOR = "green"
+        echo "color is $COLOR"
+
+        sh '''COLOR=${COLOR}
+        echo $COLOR'''
          }
         
 	stage('Status Updater'){
-         steps{
-          script{
-              echo "Status updater step "
-                }
-              }
+        COLOR = "green"
+        echo "color is $COLOR"
+
+        sh '''COLOR=${COLOR}
+        echo $COLOR'''
          }
         
  }
