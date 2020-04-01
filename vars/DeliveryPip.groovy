@@ -1,29 +1,58 @@
-def call(Map pipelineParams) {
-
+def call(body) {
     pipeline {
-        agent any
-        discardOldItems {
-            numToKeep(5)
-        }
-        stages {
-            stage('checkout git') {
-                steps {
-                    script{
-                    echo hello
-                    }
+        options {
+                buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
                 }
-            }
-        }
+        parameters {
 
-            stage('build') {
-                steps {
-                    script{
-                    echo hello
-                    }
+                string(name: 'jobID', defaultValue: '' )
+                string(name: 'NEW_BUILDNUMBER', defaultValue: '' )
+                file name:'input', description:'contains list of projects to be build'
                 }
-            }
-       }
-}
+		agent any
+		stages{
+              stage('Prepare environment'){
+                  steps{
+                      script{
 
-
-    
+                            echo "prepare environment "
+                            common.prepareEnv()
+                            cleanWs()
+                            currentBuild.displayName = "$env.NEW_BUILDNUMBER"
+                            }
+                      }
+              }
+		stage('Delete'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        }
+		stage('Create'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        }
+		stage('Deploy'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        }
+		stage('Status Updater'){
+         steps{
+          script{
+              echo "Status updater step "
+                }
+              }
+         }
+        }
+	}
+	}
