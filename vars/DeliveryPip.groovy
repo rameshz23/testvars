@@ -13,14 +13,10 @@ def call(body) {
 		stages{
               stage('Prepare environment'){
                   steps{
-                      script{
-
-                            echo "prepare environment "
-                            common.prepareEnv()
-                            cleanWs()
-                            currentBuild.displayName = "$env.NEW_BUILDNUMBER"
-                            }
-                      }
+          		script{
+              			echo "Status updater step "
+                	   }
+              	}
               }
 	stage('Delete'){
          steps{
