@@ -26,11 +26,11 @@ def call(body) {
             }
 	stage('build') {
 		steps{
-			script{
+			sh"""
 				echo "welcome to pipeline code"
 				echo "prepare environment "
                         	currentBuild.displayName = "$env.NEW_BUILDNUMBER"
-			}
+			"""
 		}
 	}
 	stage('env') {
