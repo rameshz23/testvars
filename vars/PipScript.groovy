@@ -28,7 +28,7 @@ def call(body) {
 			stage('env') {
 				steps{
 					script{
-						currentBuild.displayName = "$env.triggerbuildname"
+						//currentBuild.displayName = "$env.triggerbuildname"
 						echo "Status updater step "
 					}
 				}
