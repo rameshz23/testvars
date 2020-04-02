@@ -19,7 +19,11 @@ def call(body) {
                 }
             }
 			stage('build') {
-				echo "welcome to pipeline code"
+				steps{
+					script{
+						echo "welcome to pipeline code"
+					}
+				}
 			}
 			stage('env') {
 				steps{
