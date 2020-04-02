@@ -10,9 +10,9 @@ def call(body) {
                 }
         agent any
         stages {
-            stage('This one should be skipped') {
+            stage('Echo') {
                 when {
-                    expression { false }
+                    expression { true }
                 }
                 steps {
                     echo "this should be skipped, but it does not ("
