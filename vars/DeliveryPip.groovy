@@ -9,9 +9,15 @@ def call(body) {
                 }
         
         agent any
+	    stages{    
         stage('Execute shell') {
 			var = "name"
 			sh "echo Hello ${var}"
 			}
+	stage('shell') {
+	var = "name"
+	sh "echo Hello ${var}"
+	}
+      }
     }
 }
