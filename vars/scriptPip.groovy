@@ -13,20 +13,18 @@ def call(body) {
     stages{
     stage('build'){
     steps{
-      shell
-      {
-          command('''
+      sh """
         echo welcome to the Script file 
-        echo $PATH ''')
-      }
+        echo $PATH 
+	"""
      }
      }
      stage('build123') {
 		steps{
-			sh"""
+			script{
 				echo "welcome to pipeline code"
 				echo "prepare environment "
-                        """
+			}
 		    }
 	    }
     }
