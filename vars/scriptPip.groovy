@@ -2,6 +2,20 @@ import org.codehaus.groovy.runtime.InvokerHelper
 import org.codehaus.groovy.runtime.InvokerHelper
 import groovy.xml.MarkupBuilder
 import groovy.xml.StreamingMarkupBuilder
+import com.cloudbees.plugins.credentials.Credentials;
+import com.cloudbees.plugins.credentials.CredentialsMatchers;
+import com.cloudbees.plugins.credentials.CredentialsProvider;
+import com.cloudbees.plugins.credentials.common.StandardListBoxModel;
+import com.cloudbees.plugins.credentials.domains.URIRequirementBuilder;
+import com.jenkins.plugins.sparknotify.beans.SparkMessage;
+import com.jenkins.plugins.sparknotify.beans.TestResult;
+import com.jenkins.plugins.sparknotify.enums.SparkMessageType;
+import com.jenkins.plugins.sparknotify.services.HtmlTestResultService;
+import com.jenkins.plugins.sparknotify.services.MarkdownTestResultService;
+import com.jenkins.plugins.sparknotify.services.SparkNotifier;
+import com.jenkins.plugins.sparknotify.services.TestResultService;
+import com.jenkins.plugins.sparknotify.services.TextTestResultService;
+import com.jenkins.plugins.sparknotify.utils.MessageConst;
 
 def call(body) {
     def config = [:]
