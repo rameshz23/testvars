@@ -9,7 +9,7 @@ def call(body) {
     body.delegate = config
     body()
     pipeline {
-	    parameters { choice(name: 'CHOICES', choices: ['one', 'two', 'three'], description: '') }
+	    
     agent any
     stages{
     stage('build'){
@@ -28,7 +28,7 @@ def call(body) {
 			"""
 		    }
 	    }
-    }
+    
 	    post{
 		    sucess{
 			    sparkSend credentialsId: 'webex', message: '${JOB_NAME} - ${BUILD_RESULT} - ${JOB_URL}', messageType: 'text', spaceList: [[spaceId: '768a8310-7348-11ea-8dca-b5cc1c3a792c', spaceName: 'common']]
@@ -37,6 +37,6 @@ def call(body) {
 			    sparkSend credentialsId: 'webex', message: '${JOB_NAME} - ${BUILD_RESULT} - ${JOB_URL}', messageType: 'text', spaceList: [[spaceId: '768a8310-7348-11ea-8dca-b5cc1c3a792c', spaceName: 'common']]
 		    }
 	    }
- }
-} 
+    }
+    }   }
    
