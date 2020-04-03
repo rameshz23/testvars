@@ -14,18 +14,15 @@ def call(body) {
       }
      }
      }
-     stage('var'){
-     sh """
-     echo Thanks
-     """
-     }
+     stage('build') {
+		steps{
+			sh"""
+				echo "welcome to pipeline code"
+				echo "prepare environment "
+                        """
+		    }
+	    }
     }
-    
-    
-    
-    
-    
-    
-    }
-   } 
+ }
+} 
    
