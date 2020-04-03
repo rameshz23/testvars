@@ -13,9 +13,11 @@ def call(body) {
     stages{
     stage('build'){
     steps{
-      script{
+      shell
+      {
+          command('''
         echo welcome to the Script file 
-        echo $PATH
+        echo $PATH ''')
       }
      }
      }
