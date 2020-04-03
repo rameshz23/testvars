@@ -1,3 +1,8 @@
+import org.codehaus.groovy.runtime.InvokerHelper
+import org.codehaus.groovy.runtime.InvokerHelper
+import groovy.xml.MarkupBuilder
+import groovy.xml.StreamingMarkupBuilder
+
 def call(body) {
     def config = [:]
     body.resolveStrategy = Closure.DELEGATE_FIRST
