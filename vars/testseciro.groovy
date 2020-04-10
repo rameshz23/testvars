@@ -19,12 +19,12 @@ def call(body) {
                     echo "this should be skipped, but it does not ("
                 }
             }
-          stage('call'){
-           steps{
-            script{
-              echo "Welcome to script file"
+          stage('call') {
+           steps    {
+                    script  {
+                            echo "Welcome to script file"
+                    }
             }
-           }
           }
           
         }//eod stages
