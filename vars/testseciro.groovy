@@ -20,9 +20,11 @@ def call(body) {
                 }
             }
           stage('call'){
+           steps{
             script{
               echo "Welcome to script file"
             }
+           }
           }
           
         }//eod stages
